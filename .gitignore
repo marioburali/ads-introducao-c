@@ -1,0 +1,14 @@
+# Arquivos compilados
+*.o
+*.exe
+exercicio01
+helloWorld
+
+# Arquivos do sistema
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Temporários
+*.tmp
