@@ -70,22 +70,32 @@ int main() {
     printf("\nEstado: %c\n", letra_c1);
     printf("\nCódigo: %s\n", codigo_c1);
     printf("\nNome da Cidade: %s\n", nome_cidade_c1);
-    printf("\nPopulação: %d\n", populacao_c1);
+    printf("\nPopulação: %lu\n", populacao_c1);
     printf("\nÁrea: %.2f km²\n", area_c1);
     printf("\nPIB: %.2f bilhões de reais\n", pib_c1);
     printf("\nNúmero de Pontos Turísticos: %d\n", pontos_turisticos_c1);
-    printf("\nDensidade Populacional: %.2f habitantes/km²\n", (float)populacao_c1 / area_c1);
-    printf("\nPIB per capita: %.2f reais\n", (pib_c1 * 1000000) / populacao_c1);
+    float densidade_c1 = (float)populacao_c1 / area_c1;
+    float inverso_densidade_c1 = area_c1 / (float)populacao_c1;
+    printf("\nDensidade Populacional: %.2f habitantes/km²\n", densidade_c1);
+    float pib_per_capita_c1 = (pib_c1 * 1000000) / populacao_c1;
+    printf("\nPIB per capita: %.2f reais\n", pib_per_capita_c1);
+    float super_poder_c1 = (float)populacao_c1 + area_c1 + pib_c1 + (float)pontos_turisticos_c1 + pib_per_capita_c1 + inverso_densidade_c1;
+    printf("Super Poder: %.2f\n", super_poder_c1);
 
     printf("\n\nCarta 2:\n");
     printf("\nEstado: %c\n", letra_c2);
     printf("\nCódigo: %s\n", codigo_c2);
     printf("\nNome da Cidade: %s\n", nome_cidade_c2);
-    printf("\nPopulação: %d\n", populacao_c2);
+    printf("\nPopulação: %lu\n", populacao_c2);
     printf("\nÁrea: %.2f km²\n", area_c2);
     printf("\nPIB: %.2f bilhões de reais\n", pib_c2);
     printf("\nNúmero de Pontos Turísticos: %d\n", pontos_turisticos_c2);
-    printf("\nDensidade Populacional: %.2f habitantes/km²\n", (float)populacao_c2 / area_c2);
-    printf("\nPIB per capita: %.2f reais\n", (pib_c2 * 1000000) / populacao_c2);
+    float densidade_c2 = (float)populacao_c2 / area_c2;
+    float inverso_densidade_c2 = area_c2 / (float)populacao_c2;
+    printf("\nDensidade Populacional: %.2f habitantes/km²\n", densidade_c2);
+    float pib_per_capita_c2 = (pib_c2 * 1000000) / populacao_c2;
+    printf("\nPIB per capita: %.2f reais\n", pib_per_capita_c2);
+    float super_poder_c2 = (float)populacao_c2 + area_c2 + pib_c2 + (float)pontos_turisticos_c2 + pib_per_capita_c2 + inverso_densidade_c2;
+    printf("Super Poder: %.2f\n", super_poder_c2);
     return 0;
 }
