@@ -25,8 +25,8 @@ int main() {
     fgets(nome_cidade_c1, sizeof(nome_cidade_c1), stdin);
     nome_cidade_c1[strcspn(nome_cidade_c1, "\n")] = 0;
     printf("Digite a população: ");
-    int populacao_c1;
-    scanf(" %d", &populacao_c1);
+    unsigned long int populacao_c1;
+    scanf(" %lu", &populacao_c1);
     printf("Digite a área (em km²): ");
     float area_c1;
     scanf(" %f", &area_c1);
@@ -53,8 +53,8 @@ int main() {
     fgets(nome_cidade_c2, sizeof(nome_cidade_c2), stdin);
     nome_cidade_c2[strcspn(nome_cidade_c2, "\n")] = 0;
     printf("Digite a população: ");
-    int populacao_c2;
-    scanf(" %d", &populacao_c2);
+    unsigned long int populacao_c2;
+    scanf(" %lu", &populacao_c2);
     printf("Digite a área (em km²): ");
     float area_c2;
     scanf(" %f", &area_c2);
