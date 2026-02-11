@@ -385,6 +385,51 @@ int main()
         default:
             printf("Opção inválida! Por favor, escolha um número de 1 a 7.\n");
         }
+        
+        // Calcular e exibir soma dos dois atributos
+        printf("\n\n========== RESULTADO FINAL (SOMA DOS ATRIBUTOS) ==========\n");
+        printf("\nAtributos escolhidos para comparação:\n");
+        printf("Primeiro: %s | Segundo: %s\n", 
+            (escolha1 == 1 ? "População" : escolha1 == 2 ? "Área" : escolha1 == 3 ? "PIB" : 
+             escolha1 == 4 ? "Pontos Turísticos" : escolha1 == 5 ? "Densidade" : 
+             escolha1 == 6 ? "PIB per capita" : "Super Poder"),
+            (escolha2 == 1 ? "População" : escolha2 == 2 ? "Área" : escolha2 == 3 ? "PIB" : 
+             escolha2 == 4 ? "Pontos Turísticos" : escolha2 == 5 ? "Densidade" : 
+             escolha2 == 6 ? "PIB per capita" : "Super Poder"));
+        
+        float soma_c1 = 0, soma_c2 = 0;
+        
+        // Soma para carta 1
+        if (escolha1 == 1) soma_c1 += (float)populacao_c1; else if (escolha1 == 2) soma_c1 += area_c1;
+        else if (escolha1 == 3) soma_c1 += pib_c1; else if (escolha1 == 4) soma_c1 += (float)pontos_turisticos_c1;
+        else if (escolha1 == 5) soma_c1 += densidade_c1; else if (escolha1 == 6) soma_c1 += pib_per_capita_c1;
+        else if (escolha1 == 7) soma_c1 += super_poder_c1;
+        
+        if (escolha2 == 1) soma_c1 += (float)populacao_c1; else if (escolha2 == 2) soma_c1 += area_c1;
+        else if (escolha2 == 3) soma_c1 += pib_c1; else if (escolha2 == 4) soma_c1 += (float)pontos_turisticos_c1;
+        else if (escolha2 == 5) soma_c1 += densidade_c1; else if (escolha2 == 6) soma_c1 += pib_per_capita_c1;
+        else if (escolha2 == 7) soma_c1 += super_poder_c1;
+        
+        // Soma para carta 2
+        if (escolha1 == 1) soma_c2 += (float)populacao_c2; else if (escolha1 == 2) soma_c2 += area_c2;
+        else if (escolha1 == 3) soma_c2 += pib_c2; else if (escolha1 == 4) soma_c2 += (float)pontos_turisticos_c2;
+        else if (escolha1 == 5) soma_c2 += densidade_c2; else if (escolha1 == 6) soma_c2 += pib_per_capita_c2;
+        else if (escolha1 == 7) soma_c2 += super_poder_c2;
+        
+        if (escolha2 == 1) soma_c2 += (float)populacao_c2; else if (escolha2 == 2) soma_c2 += area_c2;
+        else if (escolha2 == 3) soma_c2 += pib_c2; else if (escolha2 == 4) soma_c2 += (float)pontos_turisticos_c2;
+        else if (escolha2 == 5) soma_c2 += densidade_c2; else if (escolha2 == 6) soma_c2 += pib_per_capita_c2;
+        else if (escolha2 == 7) soma_c2 += super_poder_c2;
+        
+        printf("\n%s: %.2f\n", nome_cidade_c1, soma_c1);
+        printf("%s: %.2f\n\n", nome_cidade_c2, soma_c2);
+        
+        if (soma_c1 > soma_c2)
+            printf("🏆 VENCEDOR: %s VENCEU!\n", nome_cidade_c1);
+        else if (soma_c1 < soma_c2)
+            printf("🏆 VENCEDOR: %s VENCEU!\n", nome_cidade_c2);
+        else
+            printf("🤝 EMPATE! As duas cidades têm a mesma soma.\n");
         break;
 
     case 3:
