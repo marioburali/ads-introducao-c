@@ -103,91 +103,291 @@ int main()
     float super_poder_c2 = (float)populacao_c2 + area_c2 + pib_c2 + (float)pontos_turisticos_c2 + pib_per_capita_c2 + inverso_densidade_c2;
     printf("Super Poder: %.2f\n", super_poder_c2);
 
-    printf("Qual atributo deseja comparar? (1 - População, 2 - Área, 3 - PIB, 4 - Número de Pontos Turísticos, 5 - Densidade Populacional, 6 - PIB per capita, 7 - Super Poder, 8 - Todos): ");
-    int escolha;
-    scanf(" %d", &escolha);
+    printf("Você deseja comparar um ou dois atributos?\n");
+    printf("1. Comparar apenas um atributo\n");
+    printf("2. Comparar dois atributos\n");
+    printf("3. Comparar todos os atributos\n");
+    int tipo_comparacao;
+    scanf(" %d", &tipo_comparacao);
 
-    switch (escolha)
+    switch (tipo_comparacao)
     {
     case 1:
-        printf("\n========== COMPARAÇÃO: POPULAÇÃO ==========");
-        printf("\n%s: %lu habitantes\n", nome_cidade_c1, populacao_c1);
-        printf("%s: %lu habitantes\n\n", nome_cidade_c2, populacao_c2);
-        if (populacao_c1 > populacao_c2)
-            printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c1);
-        else if (populacao_c1 < populacao_c2)
-            printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c2);
-        else
-            printf("🤝 Resultado: EMPATE!\n");
-        break;
+        printf("Qual atributo deseja comparar? (1 - População, 2 - Área, 3 - PIB, 4 - Número de Pontos Turísticos, 5 - Densidade Populacional, 6 - PIB per capita, 7 - Super Poder): ");
+        int escolha;
+        scanf(" %d", &escolha);
+
+        switch (escolha)
+        {
+        case 1:
+            printf("\n========== COMPARAÇÃO: POPULAÇÃO ==========");
+            printf("\n%s: %lu habitantes\n", nome_cidade_c1, populacao_c1);
+            printf("%s: %lu habitantes\n\n", nome_cidade_c2, populacao_c2);
+            if (populacao_c1 > populacao_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c1);
+            else if (populacao_c1 < populacao_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c2);
+            else
+                printf("🤝 Resultado: EMPATE!\n");
+            break;
+        case 2:
+            printf("\n========== COMPARAÇÃO: ÁREA ==========");
+            printf("\n%s: %.2f km²\n", nome_cidade_c1, area_c1);
+            printf("%s: %.2f km²\n\n", nome_cidade_c2, area_c2);
+            if (area_c1 > area_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c1);
+            else if (area_c1 < area_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c2);
+            else
+                printf("🤝 Resultado: EMPATE!\n");
+            break;
+        case 3:
+            printf("\n========== COMPARAÇÃO: PIB ==========");
+            printf("\n%s: %.2f bilhões de reais\n", nome_cidade_c1, pib_c1);
+            printf("%s: %.2f bilhões de reais\n\n", nome_cidade_c2, pib_c2);
+            if (pib_c1 > pib_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c1);
+            else if (pib_c1 < pib_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c2);
+            else
+                printf("🤝 Resultado: EMPATE!\n");
+            break;
+        case 4:
+            printf("\n========== COMPARAÇÃO: PONTOS TURÍSTICOS ==========");
+            printf("\n%s: %d pontos\n", nome_cidade_c1, pontos_turisticos_c1);
+            printf("%s: %d pontos\n\n", nome_cidade_c2, pontos_turisticos_c2);
+            if (pontos_turisticos_c1 > pontos_turisticos_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c1);
+            else if (pontos_turisticos_c1 < pontos_turisticos_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c2);
+            else
+                printf("🤝 Resultado: EMPATE!\n");
+            break;
+        case 5:
+            printf("\n========== COMPARAÇÃO: DENSIDADE POPULACIONAL ==========");
+            printf("\n%s: %.2f hab/km²\n", nome_cidade_c1, densidade_c1);
+            printf("%s: %.2f hab/km²\n\n", nome_cidade_c2, densidade_c2);
+            printf("(Nota: MENOR densidade vence neste atributo)\n\n");
+            if (densidade_c1 < densidade_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c1);
+            else if (densidade_c1 > densidade_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c2);
+            else
+                printf("🤝 Resultado: EMPATE!\n");
+            break;
+        case 6:
+            printf("\n========== COMPARAÇÃO: PIB PER CAPITA ==========");
+            printf("\n%s: %.2f reais\n", nome_cidade_c1, pib_per_capita_c1);
+            printf("%s: %.2f reais\n\n", nome_cidade_c2, pib_per_capita_c2);
+            if (pib_per_capita_c1 > pib_per_capita_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c1);
+            else if (pib_per_capita_c1 < pib_per_capita_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c2);
+            else
+                printf("🤝 Resultado: EMPATE!\n");
+            break;
+        case 7:
+            printf("\n========== COMPARAÇÃO: SUPER PODER ==========");
+            printf("\n%s: %.2f\n", nome_cidade_c1, super_poder_c1);
+            printf("%s: %.2f\n\n", nome_cidade_c2, super_poder_c2);
+            if (super_poder_c1 > super_poder_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c1);
+            else if (super_poder_c1 < super_poder_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c2);
+            else
+                printf("🤝 Resultado: EMPATE!\n");
+            break;
+
+            break;
+        }
+
     case 2:
-        printf("\n========== COMPARAÇÃO: ÁREA ==========");
-        printf("\n%s: %.2f km²\n", nome_cidade_c1, area_c1);
-        printf("%s: %.2f km²\n\n", nome_cidade_c2, area_c2);
-        if (area_c1 > area_c2)
-            printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c1);
-        else if (area_c1 < area_c2)
-            printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c2);
-        else
-            printf("🤝 Resultado: EMPATE!\n");
+        printf("Escolha o primeiro atributo a comparar (1 - População, 2 - Área, 3 - PIB, 4 - Número de Pontos Turísticos, 5 - Densidade Populacional, 6 - PIB per capita, 7 - Super Poder): ");
+        int escolha1;
+        scanf(" %d", &escolha1);
+        
+        int escolha2;
+        do {
+            printf("Escolha o segundo atributo a comparar (1 - População, 2 - Área, 3 - PIB, 4 - Número de Pontos Turísticos, 5 - Densidade Populacional, 6 - PIB per capita, 7 - Super Poder): ");
+            scanf(" %d", &escolha2);
+            
+            if (escolha2 == escolha1) {
+                printf("❌ Este é o mesmo atributo do primeiro! Escolha um diferente.\n");
+            } else if (escolha2 < 1 || escolha2 > 7) {
+                printf("❌ Opção inválida! Por favor, escolha um número de 1 a 7.\n");
+            }
+        } while (escolha2 == escolha1 || escolha2 < 1 || escolha2 > 7);
+        printf("\n\n========== COMPARAÇÃO DO PRIMEIRO ATRIBUTO ==========\n");
+        switch (escolha1)
+        {
+        case 1:
+            printf("\n========== COMPARAÇÃO: POPULAÇÃO ==========");
+            printf("\n%s: %lu habitantes\n", nome_cidade_c1, populacao_c1);
+            printf("%s: %lu habitantes\n\n", nome_cidade_c2, populacao_c2);
+            if (populacao_c1 > populacao_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c1);
+            else if (populacao_c1 < populacao_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c2);
+            else
+                printf("🤝 Resultado: EMPATE!\n");
+            break;
+        case 2:
+            printf("\n========== COMPARAÇÃO: ÁREA ==========");
+            printf("\n%s: %.2f km²\n", nome_cidade_c1, area_c1);
+            printf("%s: %.2f km²\n\n", nome_cidade_c2, area_c2);
+            if (area_c1 > area_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c1);
+            else if (area_c1 < area_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c2);
+            else
+                printf("🤝 Resultado: EMPATE!\n");
+            break;
+        case 3:
+            printf("\n========== COMPARAÇÃO: PIB ==========");
+            printf("\n%s: %.2f bilhões de reais\n", nome_cidade_c1, pib_c1);
+            printf("%s: %.2f bilhões de reais\n\n", nome_cidade_c2, pib_c2);
+            if (pib_c1 > pib_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c1);
+            else if (pib_c1 < pib_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c2);
+            else
+                printf("🤝 Resultado: EMPATE!\n");
+            break;
+        case 4:
+            printf("\n========== COMPARAÇÃO: PONTOS TURÍSTICOS ==========");
+            printf("\n%s: %d pontos\n", nome_cidade_c1, pontos_turisticos_c1);
+            printf("%s: %d pontos\n\n", nome_cidade_c2, pontos_turisticos_c2);
+            if (pontos_turisticos_c1 > pontos_turisticos_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c1);
+            else if (pontos_turisticos_c1 < pontos_turisticos_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c2);
+            else
+                printf("🤝 Resultado: EMPATE!\n");
+            break;
+        case 5:
+            printf("\n========== COMPARAÇÃO: DENSIDADE POPULACIONAL ==========");
+            printf("\n%s: %.2f hab/km²\n", nome_cidade_c1, densidade_c1);
+            printf("%s: %.2f hab/km²\n\n", nome_cidade_c2, densidade_c2);
+            printf("(Nota: MENOR densidade vence neste atributo)\n\n");
+            if (densidade_c1 < densidade_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c1);
+            else if (densidade_c1 > densidade_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c2);
+            else
+                printf("🤝 Resultado: EMPATE!\n");
+            break;
+        case 6:
+            printf("\n========== COMPARAÇÃO: PIB PER CAPITA ==========");
+            printf("\n%s: %.2f reais\n", nome_cidade_c1, pib_per_capita_c1);
+            printf("%s: %.2f reais\n\n", nome_cidade_c2, pib_per_capita_c2);
+            if (pib_per_capita_c1 > pib_per_capita_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c1);
+            else if (pib_per_capita_c1 < pib_per_capita_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c2);
+            else
+                printf("🤝 Resultado: EMPATE!\n");
+            break;
+        case 7:
+            printf("\n========== COMPARAÇÃO: SUPER PODER ==========");
+            printf("\n%s: %.2f\n", nome_cidade_c1, super_poder_c1);
+            printf("%s: %.2f\n\n", nome_cidade_c2, super_poder_c2);
+            if (super_poder_c1 > super_poder_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c1);
+            else if (super_poder_c1 < super_poder_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c2);
+            else
+                printf("🤝 Resultado: EMPATE!\n");
+            break;
+        default:
+            printf("Opção inválida! Por favor, escolha um número de 1 a 7.\n");
+        }
+        printf("\n\n========== COMPARAÇÃO DO SEGUNDO ATRIBUTO ==========\n");
+        switch (escolha2)
+        {
+        case 1:
+            printf("\n========== COMPARAÇÃO: POPULAÇÃO ==========");
+            printf("\n%s: %lu habitantes\n", nome_cidade_c1, populacao_c1);
+            printf("%s: %lu habitantes\n\n", nome_cidade_c2, populacao_c2);
+            if (populacao_c1 > populacao_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c1);
+            else if (populacao_c1 < populacao_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c2);
+            else
+                printf("🤝 Resultado: EMPATE!\n");
+            break;
+        case 2:
+            printf("\n========== COMPARAÇÃO: ÁREA ==========");
+            printf("\n%s: %.2f km²\n", nome_cidade_c1, area_c1);
+            printf("%s: %.2f km²\n\n", nome_cidade_c2, area_c2);
+            if (area_c1 > area_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c1);
+            else if (area_c1 < area_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c2);
+            else
+                printf("🤝 Resultado: EMPATE!\n");
+            break;
+        case 3:
+            printf("\n========== COMPARAÇÃO: PIB ==========");
+            printf("\n%s: %.2f bilhões de reais\n", nome_cidade_c1, pib_c1);
+            printf("%s: %.2f bilhões de reais\n\n", nome_cidade_c2, pib_c2);
+            if (pib_c1 > pib_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c1);
+            else if (pib_c1 < pib_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c2);
+            else
+                printf("🤝 Resultado: EMPATE!\n");
+            break;
+        case 4:
+            printf("\n========== COMPARAÇÃO: PONTOS TURÍSTICOS ==========");
+            printf("\n%s: %d pontos\n", nome_cidade_c1, pontos_turisticos_c1);
+            printf("%s: %d pontos\n\n", nome_cidade_c2, pontos_turisticos_c2);
+            if (pontos_turisticos_c1 > pontos_turisticos_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c1);
+            else if (pontos_turisticos_c1 < pontos_turisticos_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c2);
+            else
+                printf("🤝 Resultado: EMPATE!\n");
+            break;
+        case 5:
+            printf("\n========== COMPARAÇÃO: DENSIDADE POPULACIONAL ==========");
+            printf("\n%s: %.2f hab/km²\n", nome_cidade_c1, densidade_c1);
+            printf("%s: %.2f hab/km²\n\n", nome_cidade_c2, densidade_c2);
+            printf("(Nota: MENOR densidade vence neste atributo)\n\n");
+            if (densidade_c1 < densidade_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c1);
+            else if (densidade_c1 > densidade_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c2);
+            else
+                printf("🤝 Resultado: EMPATE!\n");
+            break;
+        case 6:
+            printf("\n========== COMPARAÇÃO: PIB PER CAPITA ==========");
+            printf("\n%s: %.2f reais\n", nome_cidade_c1, pib_per_capita_c1);
+            printf("%s: %.2f reais\n\n", nome_cidade_c2, pib_per_capita_c2);
+            if (pib_per_capita_c1 > pib_per_capita_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c1);
+            else if (pib_per_capita_c1 < pib_per_capita_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c2);
+            else
+                printf("🤝 Resultado: EMPATE!\n");
+            break;
+        case 7:
+            printf("\n========== COMPARAÇÃO: SUPER PODER ==========");
+            printf("\n%s: %.2f\n", nome_cidade_c1, super_poder_c1);
+            printf("%s: %.2f\n\n", nome_cidade_c2, super_poder_c2);
+            if (super_poder_c1 > super_poder_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c1);
+            else if (super_poder_c1 < super_poder_c2)
+                printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c2);
+            else
+                printf("🤝 Resultado: EMPATE!\n");
+            break;
+        default:
+            printf("Opção inválida! Por favor, escolha um número de 1 a 7.\n");
+        }
         break;
+
     case 3:
-        printf("\n========== COMPARAÇÃO: PIB ==========");
-        printf("\n%s: %.2f bilhões de reais\n", nome_cidade_c1, pib_c1);
-        printf("%s: %.2f bilhões de reais\n\n", nome_cidade_c2, pib_c2);
-        if (pib_c1 > pib_c2)
-            printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c1);
-        else if (pib_c1 < pib_c2)
-            printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c2);
-        else
-            printf("🤝 Resultado: EMPATE!\n");
-        break;
-    case 4:
-        printf("\n========== COMPARAÇÃO: PONTOS TURÍSTICOS ==========");
-        printf("\n%s: %d pontos\n", nome_cidade_c1, pontos_turisticos_c1);
-        printf("%s: %d pontos\n\n", nome_cidade_c2, pontos_turisticos_c2);
-        if (pontos_turisticos_c1 > pontos_turisticos_c2)
-            printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c1);
-        else if (pontos_turisticos_c1 < pontos_turisticos_c2)
-            printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c2);
-        else
-            printf("🤝 Resultado: EMPATE!\n");
-        break;
-    case 5:
-        printf("\n========== COMPARAÇÃO: DENSIDADE POPULACIONAL ==========");
-        printf("\n%s: %.2f hab/km²\n", nome_cidade_c1, densidade_c1);
-        printf("%s: %.2f hab/km²\n\n", nome_cidade_c2, densidade_c2);
-        printf("(Nota: MENOR densidade vence neste atributo)\n\n");
-        if (densidade_c1 < densidade_c2)
-            printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c1);
-        else if (densidade_c1 > densidade_c2)
-            printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c2);
-        else
-            printf("🤝 Resultado: EMPATE!\n");
-        break;
-    case 6:
-        printf("\n========== COMPARAÇÃO: PIB PER CAPITA ==========");
-        printf("\n%s: %.2f reais\n", nome_cidade_c1, pib_per_capita_c1);
-        printf("%s: %.2f reais\n\n", nome_cidade_c2, pib_per_capita_c2);
-        if (pib_per_capita_c1 > pib_per_capita_c2)
-            printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c1);
-        else if (pib_per_capita_c1 < pib_per_capita_c2)
-            printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c2);
-        else
-            printf("🤝 Resultado: EMPATE!\n");
-        break;
-    case 7:
-        printf("\n========== COMPARAÇÃO: SUPER PODER ==========");
-        printf("\n%s: %.2f\n", nome_cidade_c1, super_poder_c1);
-        printf("%s: %.2f\n\n", nome_cidade_c2, super_poder_c2);
-        if (super_poder_c1 > super_poder_c2)
-            printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c1);
-        else if (super_poder_c1 < super_poder_c2)
-            printf("🏆 Resultado: %s VENCEU!\n", nome_cidade_c2);
-        else
-            printf("🤝 Resultado: EMPATE!\n");
-        break;
-    case 8:
         printf("\n\n========== COMPARAÇÃO COMPLETA ==========\n\n");
 
         printf("--- POPULAÇÃO ---\n");
@@ -260,8 +460,10 @@ int main()
         else
             printf("🤝 EMPATE!\n");
         break;
+
     default:
-        printf("Opção inválida! Por favor, escolha um número de 1 a 8.\n");
+        break;
     }
+
     return 0;
 }
